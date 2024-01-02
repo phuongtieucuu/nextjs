@@ -1,22 +1,17 @@
 import { Fragment } from "react";
-import { useRouter } from "next/router";
 
-import { getEventById } from "../../dummy-data";
-import EventSummary from "../../components/event-detail/event-summary";
-import EventLogistics from "../../components/event-detail/event-logistics";
 import EventContent from "../../components/event-detail/event-content";
+import EventLogistics from "../../components/event-detail/event-logistics";
+import EventSummary from "../../components/event-detail/event-summary";
 import ErrorAlert from "../../components/ui/error-alert";
+import { getDetailEvent } from "../../helper/api-until";
 
-function EventDetailPage() {
-  const router = useRouter();
-
-  const eventId = router.query.eventId;
-  const event = getEventById(eventId);
-
+function EventDetailPage(props) {
+  const event = props.event;
   if (!event) {
     return (
       <ErrorAlert>
-        <p>No event found!</p>
+        <p>Loading...</p>
       </ErrorAlert>
     );
   }
@@ -35,6 +30,23 @@ function EventDetailPage() {
       </EventContent>
     </Fragment>
   );
+}
+
+export async function getStaticProps(context) {
+  const event = await getDetailEvent(context.params.eventId);
+  if (!event.data) {
+    return { notFound: true };
+  }
+  return {
+    props: { event: event.data },
+  };
+}
+
+export async function getStaticPaths() {
+  return {
+    paths: [{ params: { eventId: "65868f44b4166a87ad257d60" } }],
+    fallback: true,
+  };
 }
 
 export default EventDetailPage;

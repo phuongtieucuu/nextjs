@@ -8,4 +8,11 @@ router.get("/", async (req, res, next) => {
   });
 });
 
+router.get("/:id", async (req, res, next) => {
+  const result = await eventModel.findOne({ _id: req.params.id });
+  return res.json({
+    data: result,
+  });
+});
+
 module.exports = router;
