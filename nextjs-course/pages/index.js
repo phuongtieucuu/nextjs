@@ -4,6 +4,7 @@ import { getFeaturedEvents } from "../helper/api-until";
 function HomePage(props) {
   return (
     <div>
+      <NewsletterRegistration />
       <EventList items={props.events} />
     </div>
   );
