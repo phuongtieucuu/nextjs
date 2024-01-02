@@ -1,4 +1,5 @@
 import EventList from "../components/events/event-list";
+import NewsletterRegistration from "../components/input/newsletter-registration";
 import { getFeaturedEvents } from "../helper/api-until";
 
 function HomePage(props) {
