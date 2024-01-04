@@ -4,8 +4,8 @@ export default function PostGrid(props) {
   const { posts } = props;
   return (
     <ul className={classes.grid}>
-      {posts.map((post) => (
-        <PostItem />
+      {posts.map((post, index) => (
+        <PostItem key={index} post={post}/>
       ))}
     </ul>
   );
