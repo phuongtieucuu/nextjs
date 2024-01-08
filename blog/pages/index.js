@@ -15,7 +15,7 @@ function HomePage(props) {
 export function getStaticProps() {
   return {
     props: { posts: getFeaterPost() },
-    // revalidate: 3600,
+    revalidate: 3600,
   };
 }
 

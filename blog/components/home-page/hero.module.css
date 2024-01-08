@@ -38,3 +38,8 @@
   max-width: 40rem;
   margin: auto;
 }
+
+.hh{
+  color: var(--color-grey-200);
+  text-decoration: underline;
+}
