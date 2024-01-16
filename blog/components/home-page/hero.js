@@ -6,7 +6,7 @@ export default function Hero() {
     <section className={classes.hero}>
       <div className={classes.image}>
         <Image
-          src="/images/image_2024_01_05T08_16_18_639Z.png"
+          src="/images/image_2024_01_05T08_14_56_936Z.png"
           width={300}
           height={300}
         />
@@ -14,7 +14,7 @@ export default function Hero() {
       <h1>Hi, chào anh {`<3 <3`}</h1>
       <p>
         {/* Tiền không phải là tất cả nhưng con người làm tất cả vì tiền.(Khang Master Nextjs). */}
-        {`Hôm nay cuối tuần anh Long có bận không ? Mình đi đạp vịt Hồ Tây nhé <3.`}
+        {`Anh Long khỏi sốt chưa, em lo anh nhiều lắm khi biết tin anh sốt. Em chuân bị đồ ăn tối để anh bồi bổ sức khỏe rồi chỉ đợi anh thôi.`}
       </p>
       <p>
         <Link

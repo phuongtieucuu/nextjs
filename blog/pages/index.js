@@ -1,22 +1,7 @@
-import { Fragment } from "react";
-import FeaturedPost from "../components/home-page/featured-posts";
-import Hero from "../components/home-page/hero";
-import { getFeaterPost } from "../lib/post-until";
+import StartingPageContent from "../components/starting-page/starting-page";
 
-function HomePage(props) {
-  return (
-    <Fragment>
-      <Hero />
-      <FeaturedPost posts={props.posts} />
-    </Fragment>
-  );
-}
-
-export function getStaticProps() {
-  return {
-    props: { posts: getFeaterPost() },
-    revalidate: 3600,
-  };
+function HomePage() {
+  return <StartingPageContent />;
 }
 
 export default HomePage;
